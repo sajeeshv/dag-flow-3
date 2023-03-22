@@ -121,10 +121,10 @@ exports.RunWorkFlowNew = () => {
             const currentNode = [Object.keys(flow.structure)[0]]
            
             let payload = {}
-            if (req.body.type.toLowerCase() === 'weather') {
+            if (req.body?.type.toLowerCase() === 'weather') {
                 const wheatherData = await GetWheatherData()
                 payload = wheatherData
-            } else if (req.body.type.toLowerCase() === 'postalcode') {
+            } else if (req.body?.type.toLowerCase() === 'postalcode') {
                 const postalData = await GetPostalData()
                 payload = postalData
             } else {
